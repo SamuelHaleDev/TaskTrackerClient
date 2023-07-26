@@ -36,3 +36,92 @@
     transform: rotate(360deg);
   }
 }
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: auto;
+  display: block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  max-width: 400px;
+  text-align: center;
+}
+
+input[id=description] {
+  width: 100%;
+  height: 100px;
+  padding: 12px 20px;
+  margin: auto;
+  display: block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  max-width: 400px;
+  /* Align the placeholder text */
+  text-align: center;
+}
+
+/* Target buttons and add some default styling */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  display: block;
+  /* add some margin */
+  margin: 10px auto;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Add some default styling to htags */
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  /* Make the font size bigger so it looks like the title of the page */
+  font-size: 2.5rem;
+  /* Add a very light shadow so it appears lifted off the background */
+  text-shadow: 2px 2px 2px #000000;
+  /* Change the text color to a non black but neutral color that contrasts on the gray background */
+  color: #ffffff;
+}
+
+/* Target addNewTask class of type h3 and make it smaller than default, take off the shadow */
+h3.addNewTask {
+  font-size: 1.5rem;
+  text-shadow: none;
+  /* Make it dark grey */
+  color: #333333;
+
+}
+
+/* Target the ul element with class 'list' and make it so it stacks under the next element */
+ul.list {
+  display: block;
+  margin: auto;
+  max-width: 400px;
+  /* Make the list items stack vertically */
+  flex-direction: column;
+  /* Make the list items center in the ul */
+  align-items: center;
+  /* Take off the default padding and bullets */
+  padding: 0;
+  list-style-type: none;
+}
+
+/* labels should be aligned in the center horizontally */
+label {
+  display: block;
+  text-align: center;
+  /*add some margin*/
+  margin: 10px 0;
+}
+
+/* Target the header component and add a colored banner behind it */
+header {
+  background-color: #333333;
+  /* Add some padding to the top and bottom of the header */
+  padding: 20px 0;
+}
+
+
