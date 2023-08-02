@@ -1,15 +1,19 @@
 import React from 'react';
 
+import './css/Task.css';
+
 const Task = ({ task }) => {
 
   return (
-    <div>
+    <>
       <li className='Task'>
-        <span>{task.title}</span>
-        <span>{task.description}</span>
-        <span>{task.deadline}</span>
+        <a href="#">
+          <span>Task: {task.title}</span>
+          <span>Description: {task.description}</span>
+          <span>Due: {task.deadline}</span>
+        </a>
       </li>
-    </div>
+    </>
   )
 }
 

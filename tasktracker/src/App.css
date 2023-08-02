@@ -124,4 +124,21 @@ header {
   padding: 20px 0;
 }
 
+ul.list{
+  display: flex;
+  /* Add styling that will wrap after the items fill up the row */
+  flex-flow: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+}
 
+a {
+  cursor: default;
+}
+
+section.listSection {
+  width: 100%;
+}

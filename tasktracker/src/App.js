@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Header } from './components/Header';
 import { GlobalProvider } from './context/GlobalState';
@@ -10,8 +9,8 @@ function App() {
     <GlobalProvider>
       <Header />
       <div className='container'>
-        <TaskList />
         <AddTask />
+        <TaskList />
       </div>
     </GlobalProvider>
   );

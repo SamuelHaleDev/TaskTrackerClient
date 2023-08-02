@@ -1,0 +1,21 @@
+li a{
+    text-decoration:none;
+    color:#000;
+    background:#ffc;
+    display:block;
+    height:10em;
+    width:10em;
+    padding:1em;
+}
+li{
+margin:1em;
+}
+
+/* Target span text and apply default styling */
+
+span {
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
