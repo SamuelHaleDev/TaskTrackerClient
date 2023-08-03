@@ -21,9 +21,17 @@ export const GlobalProvider = ({ children }) => {
     });
   }
 
+  function deleteTask(id) {
+    dispatch({
+      type: 'DELETE_TASK',
+      payload: id
+    });
+  }
+
   return (<GlobalContext.Provider value={{
     tasks: state.tasks,
-    addTask
+    addTask,
+    deleteTask
   }}>
     {children}
   </GlobalContext.Provider>);

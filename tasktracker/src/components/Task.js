@@ -25,12 +25,13 @@ const Task = ({ task }) => {
       <li className='Task'>
         <div className='taskContainer'>
           <button type="button" className='collapsible' onClick={onClick} id={task.id}>
-            <input type='checkbox' className='checkbox' id='checkbox' />
+            <input type='checkbox' className='deleteCheckbox'/>
             Task: {task.title}
           </button>     
           <div className="content">
             <span>Description: {task.description}</span>
             <span>Due: {task.deadline}</span>
+            <span>Completed <input type='checkbox' /></span>
           </div>
         </div>
       </li>
