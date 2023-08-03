@@ -10,7 +10,7 @@ export const TaskList = () => {
   return (
     <div>
       <section className='listSection'>
-        <h3>Tasks</h3>
+        <h3 className='TaskList'>Tasks</h3>
         <ul className="list">
           {tasks.map(task => (<Task key={task.id} task={task} />))}
         </ul>

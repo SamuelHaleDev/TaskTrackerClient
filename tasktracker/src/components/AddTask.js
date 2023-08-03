@@ -30,7 +30,6 @@ export const AddTask = () => {
 
     return (
         <div>
-            <h3 className='addNewTask'>Add new task</h3>
             <form onSubmit={onSubmit}>
                 <div className="form-control">
                     <label htmlFor="title">Title</label>

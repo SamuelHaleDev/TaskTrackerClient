@@ -46,19 +46,22 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
   max-width: 400px;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 input[id=description] {
   width: 100%;
   height: 100px;
   padding: 12px 20px;
-  margin: auto;
   display: block;
   border: 1px solid #ccc;
   box-sizing: border-box;
   max-width: 400px;
   /* Align the placeholder text */
-  text-align: center;
+  /* Make it so text stays inside the box as long as possible */
+
 }
 
 /* Target buttons and add some default styling */
@@ -80,10 +83,8 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   /* Make the font size bigger so it looks like the title of the page */
   font-size: 2.5rem;
-  /* Add a very light shadow so it appears lifted off the background */
-  text-shadow: 2px 2px 2px #000000;
   /* Change the text color to a non black but neutral color that contrasts on the gray background */
-  color: #ffffff;
+  color: black;
 }
 
 /* Target addNewTask class of type h3 and make it smaller than default, take off the shadow */
@@ -119,9 +120,21 @@ label {
 
 /* Target the header component and add a colored banner behind it */
 header {
-  background-color: #333333;
+  background-color: black;
   /* Add some padding to the top and bottom of the header */
   padding: 20px 0;
+}
+
+body {
+  background-color: #eeeeee;
+}
+
+html {
+  background-color: #ccc;
+}
+
+section.listSection {
+  background-color: #ccc;
 }
 
 ul.list{
@@ -141,4 +154,35 @@ a {
 
 section.listSection {
   width: 100%;
+}
+
+/* Set the below font to a Georgia font */
+h3.pageTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+h3.TaskList {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+input {
+  font-family: 'Open Sans', sans-serif;
+  /* Add some rounding to the edges */
+  border-radius: 5px;
 }
