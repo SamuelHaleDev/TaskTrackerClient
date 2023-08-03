@@ -4,7 +4,7 @@ export class Header extends Component {
   render() {
     return (
       <div>
-        <h3>Task Tracker</h3>
+        <h3 className='pageTitle'>Task Tracker</h3>
       </div>
     )
   }

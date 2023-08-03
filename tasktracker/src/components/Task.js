@@ -8,12 +8,14 @@ const Task = ({ task }) => {
     var i;
 
     for (i = 0; i < coll.length; i++) {
-      coll[i].classList.toggle("active");
-      var content = coll[i].nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
+      if (e.target.id === coll[i].id) {
+        coll[i].classList.toggle("active");
+        var content = coll[i].nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
       }
     }
   }
@@ -21,7 +23,7 @@ const Task = ({ task }) => {
   return (
     <>
       <li className='Task'>
-        <button type="button" className='collapsible' onClick={onClick}>Task: {task.title}</button>
+        <button type="button" className='collapsible' onClick={onClick} id={task.id}>Task: {task.title}</button>
         <div className="content">
           <span>Description: {task.description}</span>
           <span>Due: {task.deadline}</span>

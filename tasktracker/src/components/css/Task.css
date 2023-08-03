@@ -12,10 +12,11 @@ span {
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-    background-color: #3b3a3a;
+    background-color: #bbb;
     color: #ffffff;
     cursor: pointer;
     width: 100%;
+    min-width: 150px;
     padding: 18px;
     border: none;
     text-align: left;
@@ -25,7 +26,7 @@ span {
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .collapsible:hover {
-    background-color: #ccc;
+    background-color: #3b3a3a;
   }
   
   /* Style the collapsible content. Note: hidden by default */
@@ -33,7 +34,7 @@ span {
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: #ddd;
   }
 
   .collapsible:after {
@@ -44,8 +45,20 @@ span {
     margin-left: 5px;
   }
   
-  button .active:after {
+  .active:after {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
     margin-bottom: 0px;
   }
+
+  button.collapsible.active {
+    margin-bottom: 0px;
+  }
+
+  /* Add some default styling to the spans that makes them stack on top of eachother */
+  div.content span {
+    display: block;
+    position: relative;
+    transition: 0.5s;
+    background-color: #ddd;
+}
 
