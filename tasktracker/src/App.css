@@ -64,6 +64,18 @@ input[id=description] {
 
 }
 
+input[type=checkbox] {
+  /* Add some default checkbox styling */
+  outline: none;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #eee;
+  /* Add some margin to the right of the checkbox */
+  margin-right: 10px;
+
+}
+
 /* Target buttons and add some default styling */
 button {
   background-color: #4CAF50;
@@ -185,4 +197,28 @@ input {
   font-family: 'Open Sans', sans-serif;
   /* Add some rounding to the edges */
   border-radius: 5px;
+}
+
+button.collapsible {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+li.Task {
+  max-width: 100%;
+}
+
+/* Set up the ul to be a 4 column grid that repeats */
+ul.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  /* Add some padding to the top and bottom of the ul */
+  padding: 20px 0;
+}
+
+div.taskContainer {
+  max-width: 100%;
+  margin-top: 0px;
 }
