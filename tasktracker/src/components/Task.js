@@ -23,10 +23,15 @@ const Task = ({ task }) => {
   return (
     <>
       <li className='Task'>
-        <button type="button" className='collapsible' onClick={onClick} id={task.id}>Task: {task.title}</button>
-        <div className="content">
-          <span>Description: {task.description}</span>
-          <span>Due: {task.deadline}</span>
+        <div className='taskContainer'>
+          <button type="button" className='collapsible' onClick={onClick} id={task.id}>
+            <input type='checkbox' className='checkbox' id='checkbox' />
+            Task: {task.title}
+          </button>     
+          <div className="content">
+            <span>Description: {task.description}</span>
+            <span>Due: {task.deadline}</span>
+          </div>
         </div>
       </li>
     </>
