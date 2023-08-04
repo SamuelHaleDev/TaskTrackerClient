@@ -1,37 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './css/Task.css';
 
 const Task = ({ task }) => {
-  const onClick = e => {
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
-    for (i = 0; i < coll.length; i++) {
-      if (e.target.id === coll[i].id) {
-        coll[i].classList.toggle("active");
-        var content = coll[i].nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      }
-    }
-  }
+  const handleCollapseToggle = () => {
+    setIsCollapsed(!isCollapsed);
+  };
 
   return (
     <>
-      <li className='Task'>
-        <div className='taskContainer'>
-          <button type="button" className='collapsible' onClick={onClick} id={task.id}>
-            <input type='checkbox' className='deleteCheckbox'/>
-            Task: {task.title}
-          </button>     
-          <div className="content">
-            <span>Description: {task.description}</span>
-            <span>Due: {task.deadline}</span>
-            <span>Completed <input type='checkbox' /></span>
+      <li className='Task d-flex align-items-start' id={task.id}>
+        <div class="card" style={{ width: '18rem' }}>
+          <button type="button" class="card-header" data-toggle="collapse" data-target={`#collapse-${task.id}`} aria-expanded="true" aria-controls={`#collapse-${task.id}`} onClick={handleCollapseToggle}>
+            {task.title}
+          </button>
+          <div className={`collapse ${isCollapsed ? '' : 'show'}`} data-parent=".TaskList">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{task.deadline}</li>
+              <li class="list-group-item">{task.description}</li>
+              <li class="list-group-item">
+                <div class="form-switch row align-items-center justify-content-between px-0">
+                  <div class="col-auto">
+                    <label class="form-check-label col flex-shrink-0" for="flexSwitchCheckDefault">Complete Task</label>
+                  </div>
+                  <div class="col-auto">
+                    <input class="form-check-input mx-4" type="checkbox" />
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-switch row align-items-center justify-content-between px-0">
+                  <div class="col-auto">
+                    <label class="form-check-label col flex-shrink-0" for="flexSwitchCheckDefault">Delete Task</label>
+                  </div>
+                  <div class="col-auto">
+                    <input class="form-check-input mx-4 deleteButton" type="checkbox" />
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </li>

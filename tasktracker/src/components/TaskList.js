@@ -8,13 +8,13 @@ export const TaskList = () => {
   const { tasks } = useContext(GlobalContext);
 
   return (
-    <div>
-      <section className='listSection'>
-        <h3 className='TaskList'>Tasks</h3>
-        <ul className="list">
+    <div className=''>
+      <h3 className=''>Tasks</h3>
+      <div class="d-flex align-items-start">
+        <ul className="list d-flex flex-row align-items-start">
           {tasks.map(task => (<Task key={task.id} task={task} />))}
         </ul>
-      </section>
+      </div>
     </div>
   )
 }

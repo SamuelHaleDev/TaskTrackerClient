@@ -3,7 +3,7 @@ const AppReducer = (state, action) => {
         case 'ADD_TASK':
             return {
                 ...state,
-                tasks: [action.payload, ...state.tasks]
+                tasks: [...state.tasks, action.payload]
             }
         case 'DELETE_TASK':
             var newTasks = [];
