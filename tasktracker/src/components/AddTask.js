@@ -10,7 +10,7 @@ export const AddTask = () => {
 
     const { addTask } = useContext(GlobalContext);
 
-    const onSubmit = e => {
+    const addOne = (e) => {
         e.preventDefault();
 
         const newTask = {
@@ -30,20 +30,21 @@ export const AddTask = () => {
 
     return (
         <div>
-            <form onSubmit={onSubmit}>
-                <div className="form-control">
+            <form onSubmit={addOne} className='text-center'>
+                <div className='text-center'>
                     <label htmlFor="title">Title</label>
                     <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Enter title..."  id='title'/>
                 </div>
-                <div className="form-control">
+                <div className='text-center'>
                     <label htmlFor="description">Description</label>
                     <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Enter description..." id='description'/>
                 </div>
-                <div className="form-control">
+                <div className='text-center'>
                     <label htmlFor="deadline">Deadline</label>
                     <input type="text" value={deadline} onChange={(e) => setDeadline(e.target.value)} placeholder="Enter deadline..." id='deadline'/>
                 </div>
-                <button className="btn">Add task</button>
+                <button type='submit' className='btn btn-success mt-2'>Add task</button>
+
             </form>
         </div>
     )

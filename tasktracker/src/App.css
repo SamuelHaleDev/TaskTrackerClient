@@ -170,6 +170,7 @@ section.listSection {
 
 /* Set the below font to a Georgia font */
 h3.pageTitle {
+  background-color: #ccc;
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
   font-weight: bold;
@@ -189,7 +190,6 @@ h3.TaskList {
 
 label {
   font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
   text-align: center;
 }
 
@@ -222,4 +222,15 @@ div.taskContainer {
   max-width: 100%;
   margin-top: 0px;
 }
+
+div.taskContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Add some padding to the top and bottom of the div */
+  padding: 20px 0;
+} 
+
+
 
