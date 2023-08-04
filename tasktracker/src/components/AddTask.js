@@ -20,12 +20,16 @@ export const AddTask = () => {
             deadline
         }
 
-        addTask(newTask);
-
-        setTitle('');
-        setDescription('');
-        setDeadline('');
-        document.getElementById('title').focus();
+        // set up error handling
+        if (title === '' || description === '' || deadline === '') {
+            alert('Please fill in all fields');
+        } else {
+            addTask(newTask);
+            setTitle('');
+            setDescription('');
+            setDeadline('');
+            document.getElementById('title').focus();
+        }
     }
 
     return (
@@ -40,8 +44,10 @@ export const AddTask = () => {
                     <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Enter description..." id='description'/>
                 </div>
                 <div className='text-center'>
-                    <label htmlFor="deadline">Deadline</label>
-                    <input type="text" value={deadline} onChange={(e) => setDeadline(e.target.value)} placeholder="Enter deadline..." id='deadline'/>
+                    <label className='d-block'htmlFor="deadline">Deadline</label>
+                    <div class="datetime-wrapper">
+                        <input type="datetime-local" value={deadline} onChange={(e) => setDeadline(e.target.value)} placeholder="Enter deadline..." id='deadline'/>
+                    </div>
                 </div>
                 <button type='submit' className='btn btn-success mt-2'>Add task</button>
 

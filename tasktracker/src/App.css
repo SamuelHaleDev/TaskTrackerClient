@@ -76,6 +76,23 @@ input[type=checkbox] {
 
 }
 
+input[type=datetime-local] {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+input[type=datetime-local]::after:active {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Make it so when the datetime-local input calendar gets dropped down it fits on all screens */
+@media (max-width: 400px) {
+  input[type=datetime-local] {
+    max-width: 100%;
+  }
+}
+
 /* Target buttons and add some default styling */
 button {
   background-color: #4CAF50;
@@ -231,6 +248,14 @@ div.taskContainer {
   /* Add some padding to the top and bottom of the div */
   padding: 20px 0;
 } 
+
+.datetime-wrapper {
+  position: relative;
+  padding: 0;
+  margin: 0 auto;
+  width: max-content;
+}
+
 
 
 
