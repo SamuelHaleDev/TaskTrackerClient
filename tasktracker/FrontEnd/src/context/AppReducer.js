@@ -1,5 +1,11 @@
 const AppReducer = (state, action) => {
     switch(action.type) {
+        case 'GET_TASKS':
+            return {
+                ...state,
+                loading: false,
+                tasks: action.payload
+            }
         case 'ADD_TASK':
             return {
                 ...state,
@@ -12,6 +18,7 @@ const AppReducer = (state, action) => {
                     newTasks.push(state.tasks[i]);
                 }
             }
+        case 'TASK_ERROR':
             return {
                 ...state,
                 tasks: newTasks

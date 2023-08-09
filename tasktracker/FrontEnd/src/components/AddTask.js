@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState';
+var axios = require('axios');
 
 export const AddTask = () => {
     const [title, setTitle] = useState('');
