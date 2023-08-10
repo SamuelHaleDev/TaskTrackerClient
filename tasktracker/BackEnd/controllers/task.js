@@ -22,7 +22,15 @@ exports.addTask = async (req, res) => {
 
 exports.deleteTask = async (req, res) => {
     const id = req.params.id;
+    
     try {
+        // Check if the task exists
+        let task = await Task.findById(id);
+        if (!task) {
+            return res.status(404).json({ message: 'Task not found' });
+        }
+
+        // If the task exists, proceed to delete it
         await Task.findByIdAndRemove(id).exec();
         res.send('Successfully deleted!');
     } catch (err) {

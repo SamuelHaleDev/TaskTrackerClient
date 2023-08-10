@@ -1,12 +1,15 @@
 const express = require('express');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
+const cors = require('cors');
 
 connectDB();
 
 const tasks = require('./routes/task');
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 

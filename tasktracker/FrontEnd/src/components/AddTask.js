@@ -15,7 +15,6 @@ export const AddTask = () => {
         e.preventDefault();
 
         const newTask = {
-            id: Math.floor(Math.random() * 100000000),
             title,
             description,
             deadline
