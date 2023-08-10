@@ -11,9 +11,9 @@ const Task = ({ task }) => {
 
   return (
     <>
-      <li className='Task d-flex align-items-start' id={task.id}>
+      <li className='Task d-flex align-items-start' id={task._id}>
         <div class="card" style={{ width: '18rem' }}>
-          <button type="button" class="card-header" data-toggle="collapse" data-target={`#collapse-${task.id}`} aria-expanded="true" aria-controls={`#collapse-${task.id}`} onClick={handleCollapseToggle}>
+          <button type="button" class="card-header" data-toggle="collapse" data-target={`#collapse-${task._id}`} aria-expanded="true" aria-controls={`#collapse-${task._id}`} onClick={handleCollapseToggle}>
             {task.title}
           </button>
           <div className={`collapse ${isCollapsed ? '' : 'show'}`} data-parent=".TaskList">
@@ -36,7 +36,7 @@ const Task = ({ task }) => {
                     <label class="form-check-label col flex-shrink-0" for="flexSwitchCheckDefault">Delete Task</label>
                   </div>
                   <div class="col-auto">
-                    <input class="form-check-input mx-4 deleteButton" type="checkbox" />
+                    <input class="form-check-input mx-4 deleteButton" type="checkbox" data-taskid={task._id}/>
                   </div>
                 </div>
               </li>
