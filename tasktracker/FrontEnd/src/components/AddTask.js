@@ -17,7 +17,8 @@ export const AddTask = () => {
         const newTask = {
             title,
             description,
-            deadline
+            deadline,
+            isComplete: false
         }
 
         // set up error handling
@@ -45,7 +46,7 @@ export const AddTask = () => {
                 </div>
                 <div className='text-center'>
                     <label className='d-block'htmlFor="deadline">Deadline</label>
-                    <div class="datetime-wrapper">
+                    <div className="datetime-wrapper">
                         <input type="datetime-local" value={deadline} onChange={(e) => setDeadline(e.target.value)} placeholder="Enter deadline..." id='deadline'/>
                     </div>
                 </div>

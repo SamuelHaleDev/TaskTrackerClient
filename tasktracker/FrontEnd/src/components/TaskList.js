@@ -17,7 +17,7 @@ export const TaskList = () => {
   return (
     <div className=''>
       <h3 className=''>Tasks</h3>
-      <div class="d-flex align-items-start">
+      <div className="d-flex align-items-start">
         <ul className="list d-flex flex-row align-items-start">
           {tasks.map(task => (<Task key={task._id} task={task} />))}
         </ul>

@@ -11,6 +11,19 @@ const AppReducer = (state, action) => {
                 ...state,
                 tasks: [...state.tasks, action.payload]
             }
+        case 'EDIT_TASK':
+            var newTasks = [];
+            for (var i = 0; i < state.tasks.length; i++) {
+                if (state.tasks[i]._id === action.payload._id) {
+                    newTasks.push(action.payload);
+                } else {
+                    newTasks.push(state.tasks[i]);
+                }
+            }
+            return {
+                ...state,
+                tasks: newTasks
+            }
         case 'DELETE_TASK':
             var newTasks = [];
             for (var i = 0; i < state.tasks.length; i++) {

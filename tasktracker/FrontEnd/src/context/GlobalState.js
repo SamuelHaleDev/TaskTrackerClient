@@ -69,7 +69,8 @@ export const GlobalProvider = ({ children }) => {
         data: {
           title: task.title,
           description: task.description,
-          deadline: task.deadline
+          deadline: task.deadline,
+          isComplete: task.isComplete
         }
       }
   
@@ -93,6 +94,44 @@ export const GlobalProvider = ({ children }) => {
       });
     }
   }
+
+  async function editTask(id, ttitle, tdescription, tdeadline, tisComplete, tisCollapsed) {
+    try {
+      const options = {
+        url: `http://localhost:3001/api/tasks/update/${id}`,
+        method: 'PUT',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json;charset=UTF-8'
+        },
+        data: {
+          title: ttitle,
+          description: tdescription,
+          deadline: tdeadline,
+          isComplete: tisComplete,
+          isCollapse: tisCollapsed
+        }
+      }
+      axios(options)
+        .then(res => {
+          console.log(res);
+          console.log(res.data);
+          dispatch({
+            type: 'EDIT_TASK',
+            payload: res.data
+          });
+        })
+        .catch(err => console.log(err));
+      } catch (err) {
+        dispatch({
+          type: 'TASK_ERROR',
+          payload: err.response.data.error
+        });
+      }
+  }
+
+
+
 
   async function deleteTask(id) {
     try {
@@ -130,6 +169,7 @@ export const GlobalProvider = ({ children }) => {
     loading: state.loading,
     getTasks,
     addTask,
+    editTask,
     deleteTask
   }}>
     {children}
